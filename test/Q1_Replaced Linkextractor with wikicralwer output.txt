@@ -1,0 +1,495 @@
+Replaced Linkextractor with wikicralwer 
+
+Name: Muhammad Zahier Zakwan bin Mohd Arba'ai
+ID : 24963
+PROG : COE
+----------------------------------------
+output:
+----------------------------------------
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$ docker image build -t wikicrawler:base .
+Sending build context to Docker daemon  137.7kB
+Step 1/7 : FROM       python:3
+ ---> f88b2f81f83a
+Step 2/7 : RUN        pip install requests
+ ---> Using cache
+ ---> 1be928f63ebb
+Step 3/7 : RUN         pip install wikipedia
+ ---> Using cache
+ ---> 88f6db2baa6a
+Step 4/7 : WORKDIR    /app
+ ---> Using cache
+ ---> 108455e3e061
+Step 5/7 : COPY       wikicrawler.py /app/
+ ---> a24d4e9033d7
+Step 6/7 : RUN        chmod a+x wikicrawler.py
+ ---> Running in 7161ed2b5c8c
+Removing intermediate container 7161ed2b5c8c
+ ---> be96d3f21c9d
+Step 7/7 : ENTRYPOINT ["./wikicrawler.py"]
+ ---> Running in e808a46509c8
+Removing intermediate container e808a46509c8
+ ---> 7fe7ab5445a0
+Successfully built 7fe7ab5445a0
+Successfully tagged wikicrawler:base
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$ winpty docker container run -it --rm wikicrawler:base banana
+ABS-CBN Broadcasting Corporation
+APG III system
+Abiotic component
+Acta Eruditorum
+Adzuki bean
+Agriculture
+Airliner
+Al-Andalus
+Alloco
+American University
+Amylase
+Andrew Preston
+Andy Warhol
+Angiosperms
+Antonius Musa
+Arch
+Around the World in Eighty Days
+Artichoke
+Asexual reproduction
+Augustus
+Australia (continent)
+Austronesian maritime trade network
+Austronesian peoples
+Baba (bread)
+Bamboo
+BanLec
+Banana
+Banana (disambiguation)
+Banana Pancake Trail
+Banana Xanthomonas wilt
+Banana beer
+Banana boat (food)
+Banana bread
+Banana bunchy top virus
+Banana cake
+Banana chip
+Banana chips
+Banana cue
+Banana custard
+Banana equivalent dose
+Banana flour
+Banana fritter
+Banana ketchup
+Banana leaf
+Banana paper
+Banana peel
+Banana plantation
+Banana powder
+Banana pudding
+Banana republic
+Banana split
+Banana wine
+Bananadine
+Bananas
+Bananas Foster
+Banania
+Banoffee pie
+Barbeque
+Bark (botany)
+Becquerel
+Before Present
+Berry (botany)
+Bibcode
+Binomial nomenclature
+Biodiversity
+Biotic component
+Bioversity International
+Bismarck Archipelago
+Black sigatoka
+Blue Java banana
+Boli (plantain)
+Boluo fan
+Borneo
+Boston Fruit Company
+Botanical name
+Botok
+Bract
+Breakdown product
+Butyl acetate
+Bánh chuối
+Calories
+Carbohydrate
+Carbohydrates
+Cardava
+Carl Linnaeus
+Carpel
+Cavendish bananas
+Cayeye
+Center of diversity
+Central America
+Chapo (beverage)
+Chiang Mai
+Chifle
+Chinese cuisine
+Chiquita Brands International
+Chlorophyll
+Choline
+Chuối chiên
+Coconut
+Cold War
+Commelinid
+Commelinids
+Conservation biology
+Contamination
+Cooking
+Cooking banana
+Cooking plantain
+Corm
+Crop wild relatives
+Crossing-the-bridge noodles
+Cryopreservation
+Cuisine of the Philippines
+Cultivar
+Cultivar group
+Cyclone
+DNA
+Daily Value
+Dani Alves
+David Datuna
+Dentistry
+Developing country
+Dietary Reference Intake
+Dietary fiber
+Digital object identifier
+Diploid
+Dole Food Company
+Domesticated plants and animals of Austronesia
+Drought
+Dwarf Cavendish
+Dwarf Cavendish banana
+East Africa
+East African Highland banana
+East African Highland bananas
+Eating
+Edible mushroom
+Eggplant
+Emoji
+Enclave economy
+Ensete
+Ensete glaucum
+Ensete ventricosum
+Enzyme
+Erkuai
+Estadio de la Cerámica
+Ester
+Ethnic Malays
+Ethylene
+FAOSTAT
+Farmer
+Fat
+Fe'i banana
+Fern
+Fiber
+Filipino cuisine
+Flhorban 920
+Flower
+Flowering plant
+Fluoresce
+Flying Jacob
+Folate
+Food energy
+Food security
+Frank Silver
+Fritter
+Frozen banana
+Fruit
+Fruit preserves
+Fungus
+Fusarium
+Fusarium oxysporum
+Gabriele Capodilista
+Gel
+Gene banks
+Genetic diversity
+Genetic engineering
+Genome
+Genus
+Germplasm
+Ghost
+Ginanggang
+Ginataang saba
+Glutinous rice
+Granada
+Grand Nain
+Gros Michel
+Gros Michel banana
+Guineo
+Guineos verdes
+Hadith
+Hakama
+Halmahera
+Halo-halo
+Harriet Lamb
+Hate speech
+Heavy metal (chemistry)
+Herbaceous
+Hindu
+History of Chinese cuisine
+History of modern banana plantations in the Americas
+History of peasant banana production in the Americas
+Honey
+Hot pot
+Human iron metabolism
+Hybrid (biology)
+Iholena bananas
+In situ
+In vitro
+In vivo
+Indian Subcontinent
+Indo-Pacific
+Indochina
+Indomalaya
+Indonesian cuisine
+Indus Valley Civilisation
+Inflorescence
+Integrated Authority File
+International Standard Book Number
+International Standard Serial Number
+International Tropical Fruits Network
+International unit
+Inubaran
+Irving Cohn
+Islam
+Island Southeast Asia
+Isoamyl acetate
+Isobutyl acetate
+Isotopes of potassium
+Jackfruit
+Java
+Jidou liangfen
+Jules Verne
+KU Leuven
+Karat banana
+Kaveri River
+Kerala
+Kijōka-bashōfu
+Kimono
+Kingdom of Cyprus
+Kot Diji
+Kuk Swamp
+Lacatan banana
+Lady Finger banana
+Laonai yangyu
+Latex allergy
+Latundan banana
+Leaf
+Limassol
+Liquid nitrogen
+List of banana and plantain diseases
+List of banana cultivars
+List of banana dishes
+Livestock
+Lorenzo Dow Baker
+Lufu (food)
+Luigi Aloysius Colla
+Lye
+Magnesium in biology
+Mahamaya Lake
+Malagasy people
+Manganese
+Mangú (dish)
+Maoli-Popo'ulu bananas
+Maruya (Filipino cuisine)
+Maruya (food)
+Masak Hijau banana
+Matoke
+Matsuo Bashō
+Maurizio Cattelan
+Mendelian inheritance
+Meristem
+Mesopotamia
+Microgram
+Micronutrient
+Migan (noodle)
+Milligram
+Minatamis na saging
+Mineral (nutrient)
+Minor C. Keith
+Mixian (noodle)
+Mofongo
+Mohinga
+Monocots
+Monocotyledon
+Monopoly
+Mother Nature Network
+Musa (genus)
+Musa acuminata
+Musa acuminata banksii
+Musa balbisiana
+Musa coccinea
+Musa sapientum
+Musa velutina
+Musa × paradisiaca
+Musaceae
+Muses
+Mushroom
+Muslim Agricultural Revolution
+Nacatamal
+Nagasari
+Nang Tani
+National Diet Library
+Nematode
+New Guinea
+New Scientist
+Niacin
+Nile River
+Nilupak
+Noose
+Ornamental plant
+Ovary (plants)
+Pacific plantains
+Palestine (region)
+Palm sugar
+Panama disease
+Pancake
+Pantothenic acid
+Papuans
+Parthenocarpic
+Parthenocarpy
+Pazham pachadi
+Pectin
+Pectinase
+Peel (fruit)
+Pentalonia nigronervosa
+Pepes
+Perennial
+Pesticide
+Petiole (botany)
+Philippine cuisine
+Phloem
+Phosphorus
+Photosynthesis
+Physical comedy
+Phytolith
+Pinasugbo
+Pisang Awak
+Pisang goreng
+Plant genetic resources
+Plant hormone
+Plantae
+Plantain (cooking)
+Plantain (true)
+Pollen
+Polyethylene
+Polyploid
+Pontianak (folklore)
+Potassium
+Potassium-40
+Potassium in biology
+Potassium permanganate
+Potato
+Potatoes
+Pritong saging
+Propionate
+Protein
+Protein (nutrient)
+Pseudostem
+Pu-erh tea
+PubMed Central
+PubMed Identifier
+Pyrus pyrifolia
+Qiguo ji
+Radioactivity
+Radionuclide
+Ramadan
+Range (biology)
+Red banana
+Refrigerator
+Rhino Horn banana
+Riboflavin
+Ripening
+Royal Botanic Gardens, Kew
+Rubing
+Rushan cheese
+Saba Banana
+Saba banana
+Saba con hielo
+Señorita banana
+Sheet music
+Shiping doufu
+Sichuan pepper
+Sievert
+Sodium in biology
+South Asia
+South Asian cuisine
+South India
+Southeast Asia
+Southeast Asian cuisine
+Soybean
+Spinach
+Spirit
+Spread of Islam
+Spring rolls
+Starch
+Subspecies
+Sugar
+Sunlight
+Sweet potato
+Synonym (taxonomy)
+Tablecloth
+Tacacho
+Tamil culture
+Tangerine
+Taxonomy (biology)
+Textile
+Thai curry
+The New Zealand Herald
+The Velvet Underground
+The Velvet Underground & Nico
+Thiamine
+Tiruchirappalli
+Tonto (beverage)
+Tostones
+Tree
+Triploid
+Tropical Asia
+Tropical Race 4
+True plantains
+Turón (food)
+UV light
+Ultraviolet
+Umbrella
+Unicode
+United Brands Company v Commission of the European Communities
+United Nations
+United States dollar
+Vascular bundle
+Vegetable
+Vertically integrated
+Victorian Era
+Villarreal CF
+Vitamin
+Vitamin B6
+Vitamin C
+Water
+Water purification
+Wayback Machine
+West Africa
+Western Caribbean Zone
+Wild type
+Wilting
+Windward Islands
+Wolof language
+World Checklist of Selected Plant Families
+X-ray
+Xanthomonas campestris
+Xidoufen
+Xuanwei ham
+Yarn
+Yes! We Have No Bananas
+Yunnan cuisine
+Zhe'ergen
+Zinc
+Zingiberales
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$

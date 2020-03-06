@@ -1,0 +1,117 @@
+
+Zahier_Arba'ai@Zahier MINGW64 ~ (master)
+$ cd
+
+Zahier_Arba'ai@Zahier MINGW64 ~ (master)
+$ cd test
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$ ls
+api/  apibkup/  docker-compose.yml  docker-composebkup.txt  README.md  testlab3ori/  www/  wwwbkup/
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$ docker-compose up -d --build
+The Docker Engine you're using is running in swarm mode.
+
+Compose does not use swarm mode to deploy services to multiple nodes in a swarm. All containers will be scheduled on the current node.
+
+To deploy your application across the swarm, use `docker stack deploy`.
+
+Building api
+Step 1/9 : FROM python:3
+ ---> f88b2f81f83a
+Step 2/9 : LABEL maintainer="Zahier <@24963>"
+ ---> Running in 9b6bb4ba9f86
+Removing intermediate container 9b6bb4ba9f86
+ ---> fccfafdf8677
+Step 3/9 : ENV REDIS_URL="redis://localhost:6379"
+ ---> Running in 0b42d8e955c9
+Removing intermediate container 0b42d8e955c9
+ ---> 71d35aac1bdd
+Step 4/9 : WORKDIR /app
+ ---> Running in f725cad5365d
+Removing intermediate container f725cad5365d
+ ---> 5d2dc452c11e
+Step 5/9 : COPY requirements.txt /app/
+ ---> 02f802de898d
+Step 6/9 : RUN pip install -r requirements.txt
+ ---> Running in d24817f6d49e
+Collecting beautifulsoup4
+  Downloading beautifulsoup4-4.8.2-py3-none-any.whl (106 kB)
+Collecting flask
+  Downloading Flask-1.1.1-py2.py3-none-any.whl (94 kB)
+Collecting redis
+  Downloading redis-3.4.1-py2.py3-none-any.whl (71 kB)
+Collecting wikipedia
+  Downloading wikipedia-1.4.0.tar.gz (27 kB)
+Collecting requests
+  Downloading requests-2.23.0-py2.py3-none-any.whl (58 kB)
+Collecting soupsieve>=1.2
+  Downloading soupsieve-2.0-py2.py3-none-any.whl (32 kB)
+Collecting Werkzeug>=0.15
+  Downloading Werkzeug-1.0.0-py2.py3-none-any.whl (298 kB)
+Collecting click>=5.1
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+Collecting Jinja2>=2.10.1
+  Downloading Jinja2-2.11.1-py2.py3-none-any.whl (126 kB)
+Collecting itsdangerous>=0.24
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2019.11.28-py2.py3-none-any.whl (156 kB)
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1
+  Downloading urllib3-1.25.8-py2.py3-none-any.whl (125 kB)
+Collecting chardet<4,>=3.0.2
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting idna<3,>=2.5
+  Downloading idna-2.9-py2.py3-none-any.whl (58 kB)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl (32 kB)
+Building wheels for collected packages: wikipedia
+  Building wheel for wikipedia (setup.py): started
+  Building wheel for wikipedia (setup.py): finished with status 'done'
+  Created wheel for wikipedia: filename=wikipedia-1.4.0-py3-none-any.whl size=11685 sha256=bba4bf104069d5e60a960caeb7e62f42971627a08df82b86149048dda3311853
+  Stored in directory: /root/.cache/pip/wheels/07/93/05/72c05349177dca2e0ba31a33ba4f7907606f7ddef303517c6a
+Successfully built wikipedia
+Installing collected packages: soupsieve, beautifulsoup4, Werkzeug, click, MarkupSafe, Jinja2, itsdangerous, flask, redis, certifi, urllib3, chardet, idna, requests, wikipedia
+Successfully installed Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 beautifulsoup4-4.8.2 certifi-2019.11.28 chardet-3.0.4 click-7.0 flask-1.1.1 idna-2.9 itsdangerous-1.1.0 redis-3.4.1 requests-2.23.0 soupsieve-2.0 urllib3-1.25.8 wikipedia-1.4.0
+Removing intermediate container d24817f6d49e
+ ---> 0d5e37e2eee7
+Step 7/9 : COPY *.py /app/
+ ---> 1b7db9c430fc
+Step 8/9 : RUN chmod a+x *.py
+ ---> Running in 3638b3f24c12
+Removing intermediate container 3638b3f24c12
+ ---> 0287691032ee
+Step 9/9 : CMD ["./main.py"]
+ ---> Running in ab4e3b999b3b
+Removing intermediate container ab4e3b999b3b
+ ---> 352446426578
+Successfully built 352446426578
+Successfully tagged wikicrawler-api:step5-python
+Building web
+Step 1/4 : FROM       php:7-apache
+ ---> d753d5b380a1
+Step 2/4 : LABEL      maintainer="Sawood Alam <@ibnesayeed>"
+ ---> Using cache
+ ---> 6059a9078d1c
+Step 3/4 : ENV        API_ENDPOINT="http://localhost:5000/api/"
+ ---> Using cache
+ ---> b7398fd398fe
+Step 4/4 : COPY       . /var/www/html/
+ ---> Using cache
+ ---> 63f9d45a509a
+Successfully built 63f9d45a509a
+Successfully tagged wikicrawler-web:step5-python
+Recreating test_api_1 ... done
+Starting test_web_1   ... done
+Starting test_redis_1 ... done
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$ docker container ls
+CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                    NAMES
+a5cf281faeaa        wikicrawler-api:step5-python   "./main.py"              12 seconds ago      Up 8 seconds        0.0.0.0:5000->5000/tcp   test_api_1
+e179efa9c4a4        wikicrawler-web:step5-python   "docker-php-entrypoi…"   4 minutes ago       Up 8 seconds        0.0.0.0:80->80/tcp       test_web_1
+4a0392c0fdc6        redis                          "docker-entrypoint.s…"   14 minutes ago      Up 8 seconds        6379/tcp                 test_redis_1
+
+Zahier_Arba'ai@Zahier MINGW64 ~/test (master)
+$
